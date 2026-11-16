@@ -26,19 +26,22 @@
 </head>
 <body class="bg-gray-950 text-gray-100 font-sans antialiased">
 
-  <!-- Navbar -->
+ <!-- Navbar Responsiva -->
   <header class="fixed w-full top-0 z-50 bg-gray-950/95 backdrop-blur border-b border-gray-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-      <<a href="#" class="flex items-center gap-3">
-        <div class="bg-white rounded-lg px-2.5 py-1.5 shadow flex items-center justify-center">
-          <img src="logo-anf.png" alt="ANF Instalações Elétricas" class="h-10 w-auto object-contain">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex items-center justify-between gap-2">
+      
+      <!-- Logo + Nome da Empresa -->
+      <a href="#" class="flex items-center gap-2.5 min-w-0">
+        <div class="w-10 h-10 md:w-11 md:h-11 bg-white rounded-lg p-1 shadow shrink-0 flex items-center justify-center overflow-hidden">
+          <img src="logo-anf.png" alt="ANF Instalações Elétricas" class="w-full h-full object-contain scale-125">
         </div>
-        <div class="hidden sm:block">
-          <span class="font-extrabold text-lg tracking-tight text-white block leading-none">ANF</span>
-          <span class="text-xs text-gray-400 tracking-wider uppercase">Instalações Elétricas</span>
+        <div class="truncate">
+          <span class="font-extrabold text-base md:text-lg tracking-tight text-white block leading-none">ANF</span>
+          <span class="text-[10px] md:text-xs text-gray-400 tracking-wider uppercase block truncate mt-0.5">Instalações Elétricas</span>
         </div>
       </a>
 
+      <!-- Menu Desktop -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
         <a href="#especialidades" class="hover:text-nrYellow transition">Especialidades</a>
         <a href="#obras" class="hover:text-nrYellow transition">Obras & Projetos</a>
@@ -48,12 +51,29 @@
         </a>
       </nav>
 
-      <a href="#orcamento" class="md:hidden bg-nrYellow text-gray-950 font-bold text-xs px-3.5 py-2 rounded-lg">
-        Orçamento
+      <!-- Ações Mobile (Botão Orçamento + Menu Hambúrguer) -->
+      <div class="flex items-center gap-2 md:hidden shrink-0">
+        <a href="#orcamento" class="bg-nrYellow text-gray-950 font-bold text-xs px-3 py-2 rounded-lg shadow-sm">
+          Orçamento
+        </a>
+        <button id="menuBtn" type="button" aria-label="Abrir menu" class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 border border-gray-800 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Dropdown Mobile -->
+    <div id="mobileMenu" class="hidden md:hidden bg-gray-900 border-b border-gray-800 px-4 py-4 space-y-3">
+      <a href="#especialidades" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Especialidades</a>
+      <a href="#obras" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Obras & Projetos</a>
+      <a href="#diferenciais" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Diferenciais</a>
+      <a href="#orcamento" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-center bg-nrYellow text-gray-950 font-bold text-sm py-2.5 rounded-lg mt-2">
+        Falar no WhatsApp
       </a>
     </div>
   </header>
-
   <!-- Hero Section -->
   <section class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 relative overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-yellow-500/10 via-transparent to-transparent pointer-events-none"></div>
@@ -334,6 +354,9 @@
         btn.innerText = "Iniciar Conversa no WhatsApp";
         document.getElementById('leadForm').reset();
       }, 300);
+    });
+     document.getElementById('menuBtn').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
     });
   </script>
 </body>
