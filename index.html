@@ -57,8 +57,8 @@
         <a href="#orcamento" class="bg-nrYellow text-gray-950 font-bold text-xs px-3 py-2 rounded-lg shadow-sm">
           Orçamento
         </a>
-        <button id="menuBtn" type="button" aria-label="Abrir menu" class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 border border-gray-800 transition">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="menuBtn" type="button" aria-label="Abrir menu" class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 border border-gray-800 transition cursor-pointer">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
@@ -66,12 +66,12 @@
     </div>
 
     <!-- Menu Dropdown Mobile -->
-    <div id="mobileMenu" class="hidden md:hidden bg-gray-900 border-b border-gray-800 px-4 py-4 space-y-3">
-      <a href="#especialidades" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Especialidades</a>
-      <a href="#obras" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Obras & Projetos</a>
-      <a href="#depoimentos" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Depoimentos</a>
-      <a href="#faq" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Dúvidas Frequentes</a>
-      <a href="#orcamento" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-center bg-nrYellow text-gray-950 font-bold text-sm py-2.5 rounded-lg mt-2">
+    <div id="mobileMenu" class="hidden md:hidden bg-gray-900 border-b border-gray-800 px-4 py-4 space-y-3 shadow-xl">
+      <a href="#especialidades" onclick="fecharMenuMobile()" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-2 border-b border-gray-800/60">Especialidades</a>
+      <a href="#obras" onclick="fecharMenuMobile()" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-2 border-b border-gray-800/60">Obras & Projetos</a>
+      <a href="#depoimentos" onclick="fecharMenuMobile()" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-2 border-b border-gray-800/60">Depoimentos</a>
+      <a href="#faq" onclick="fecharMenuMobile()" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-2">Dúvidas Frequentes</a>
+      <a href="#orcamento" onclick="fecharMenuMobile()" class="block text-center bg-nrYellow text-gray-950 font-bold text-sm py-3 rounded-lg mt-2">
         Falar no WhatsApp
       </a>
     </div>
@@ -133,7 +133,7 @@
           <form id="leadForm" class="space-y-4">
             <div>
               <label for="nome" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Seu Nome / Empresa *</label>
-              <input type="text" id="nome" required placeholder="Ex: Carlos / HidraconRS"
+              <input type="text" id="nome" required placeholder="Ex: Carlos / Metalúrgica RS"
                 class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-nrYellow transition">
             </div>
 
@@ -301,7 +301,7 @@
             </div>
             <div>
               <label for="depEmpresa" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Nome da Empresa *</label>
-              <input type="text" id="depEmpresa" required placeholder="Ex: Hidracon"
+              <input type="text" id="depEmpresa" required placeholder="Ex: Metalúrgica RS"
                 class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-nrYellow transition">
             </div>
           </div>
@@ -317,7 +317,7 @@
         </form>
       </div>
 
-      <!-- Espaço para exibir depoimentos recebidos (já estruturado para quando você quiser fixar os melhores) -->
+      <!-- Depoimentos cadastrados -->
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-gray-950 border border-gray-800 p-6 rounded-2xl flex flex-col justify-between">
           <div>
@@ -326,7 +326,7 @@
           </div>
           <div class="mt-6 pt-4 border-t border-gray-800/80">
             <p class="text-white font-bold text-sm">Roberto Silva</p>
-            <p class="text-xs text-nrYellow">HidraconRS</p>
+            <p class="text-xs text-nrYellow">Metalúrgica RS</p>
           </div>
         </div>
 
@@ -337,7 +337,7 @@
           </div>
           <div class="mt-6 pt-4 border-t border-gray-800/80">
             <p class="text-white font-bold text-sm">Marcos Souza</p>
-            <p class="text-xs text-nrYellow">PolliBox</p>
+            <p class="text-xs text-nrYellow">Fábrica de Embalagens Sinos</p>
           </div>
         </div>
       </div>
@@ -417,7 +417,7 @@
           </div>
           <div class="flex items-center justify-between p-4 bg-gray-950 rounded-xl border border-gray-800">
             <span class="text-gray-400">E-mail Corporativo</span>
-            <a href="mailto:contato@anfinstalacoes.com.br" class="font-bold text-white hover:text-nrYellow">contato@anfinstalacoes.com.br</a>
+            <a href="mailto:anfinstalacoes@gmail.com" class="font-bold text-white hover:text-nrYellow">anfinstalacoes@gmail.com</a>
           </div>
           <div class="flex items-center justify-between p-4 bg-gray-950 rounded-xl border border-gray-800">
             <span class="text-gray-400">Base Operacional</span>
@@ -437,11 +437,11 @@
     <span class="hidden sm:inline pr-1">Orçamento Rápido</span>
   </a>
 
-  <!-- Footer com CNPJ Real Atualizado -->
+  <!-- Footer com E-mail e CNPJ -->
   <footer class="py-12 border-t border-gray-800 text-center text-sm text-gray-500 px-4">
     <p class="font-bold text-gray-300 text-base">ANF Instalações Elétricas</p>
     <p class="mt-1">Adequação NR-12 com ART • Retrofit de Máquinas (CLP/CNC) • Manutenção Industrial</p>
-    <p class="mt-2 text-xs text-gray-400">CNPJ: 55.665.781/0001-25 • Cachoeirinha, Rio Grande do Sul • Atendimento Nacional</p>
+    <p class="mt-2 text-xs text-gray-400">CNPJ: 55.665.781/0001-25 • E-mail: anfinstalacoes@gmail.com • Cachoeirinha/RS</p>
     <p class="mt-6 text-xs text-gray-600">© 2026 ANF Instalações Elétricas. Todos os direitos reservados.</p>
   </footer>
 
@@ -555,6 +555,15 @@
       document.getElementById('lightboxImg').src = "";
     }
 
+    function fecharMenuMobile() {
+      document.getElementById('mobileMenu').classList.add('hidden');
+    }
+
+    // Menu Hambúrguer Mobile
+    document.getElementById('menuBtn').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
     // Envio do formulário de orçamento
     document.getElementById('leadForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -576,7 +585,7 @@
         }).catch(err => console.error(err));
       }
 
-      let textoMsg = `Olá, tudo bem? Vim pelo site da ANF Instalações Elétricas.\n\n*Nome/Empresa:* ${nome}\n*Cidade/Região:* `${cidade}\n*Serviço de Interesse:* ${servico}\n\nGostaria de solicitar um orçamento/alinhamento técnico.`;
+      let textoMsg = `Olá, tudo bem? Vim pelo site da ANF Instalações Elétricas.\n\n*Nome/Empresa:* ${nome}\n*Cidade/Região:* ${cidade}\n*Serviço de Interesse:* ${servico}\n\nGostaria de solicitar um orçamento/alinhamento técnico.`;
 
       const urlWhats = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(textoMsg)}`;
 
@@ -588,7 +597,7 @@
       }, 300);
     });
 
-    // Envio do formulário de depoimentos (Abre o WhatsApp formatado com Nome e Empresa)
+    // Envio do formulário de depoimentos
     document.getElementById('depoimentoForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -601,10 +610,6 @@
       const urlWhatsDep = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msgDep)}`;
       window.open(urlWhatsDep, '_blank');
       document.getElementById('depoimentoForm').reset();
-    });
-
-    document.getElementById('menuBtn').addEventListener('click', function() {
-      document.getElementById('mobileMenu').classList.toggle('hidden');
     });
   </script>
 </body>
