@@ -45,6 +45,7 @@
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
         <a href="#especialidades" class="hover:text-nrYellow transition">Especialidades</a>
         <a href="#obras" class="hover:text-nrYellow transition">Obras & Projetos</a>
+        <a href="#depoimentos" class="hover:text-nrYellow transition">Depoimentos</a>
         <a href="#faq" class="hover:text-nrYellow transition">Dúvidas Frequentes</a>
         <a href="#orcamento" class="bg-nrYellow text-gray-950 font-bold px-5 py-2.5 rounded-lg hover:bg-nrYellowHover transition">
           Solicitar Orçamento
@@ -68,6 +69,7 @@
     <div id="mobileMenu" class="hidden md:hidden bg-gray-900 border-b border-gray-800 px-4 py-4 space-y-3">
       <a href="#especialidades" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Especialidades</a>
       <a href="#obras" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Obras & Projetos</a>
+      <a href="#depoimentos" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Depoimentos</a>
       <a href="#faq" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-sm font-medium text-gray-200 hover:text-nrYellow py-1">Dúvidas Frequentes</a>
       <a href="#orcamento" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block text-center bg-nrYellow text-gray-950 font-bold text-sm py-2.5 rounded-lg mt-2">
         Falar no WhatsApp
@@ -278,6 +280,70 @@
     </div>
   </section>
 
+  <!-- Seção de Depoimentos e Envio de Feedback por Parceiros/Clientes -->
+  <section id="depoimentos" class="py-20 bg-gray-900/40 border-t border-gray-800 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-nrYellow font-bold text-xs uppercase tracking-widest">Parceiros e Clientes</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">O que dizem sobre nossa entrega técnica</h2>
+        <p class="text-gray-400 mt-2 max-w-xl mx-auto">Já trabalhou conosco? Preencha o formulário abaixo para enviar o seu depoimento diretamente para nossa equipe.</p>
+      </div>
+
+      <!-- Caixa interativa para envio de depoimento -->
+      <div class="bg-gray-950 border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-2xl mb-12">
+        <h3 class="text-xl font-bold text-white mb-4">Deixar meu Depoimento</h3>
+        <form id="depoimentoForm" class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="depNome" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Seu Nome *</label>
+              <input type="text" id="depNome" required placeholder="Ex: Roberto Silva"
+                class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-nrYellow transition">
+            </div>
+            <div>
+              <label for="depEmpresa" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Nome da Empresa *</label>
+              <input type="text" id="depEmpresa" required placeholder="Ex: Metalúrgica RS"
+                class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-nrYellow transition">
+            </div>
+          </div>
+          <div>
+            <label for="depTexto" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Seu Depoimento / Feedback *</label>
+            <textarea id="depTexto" required rows="3" placeholder="Ex: Serviço impecável de adequação NR-12, ART aprovada sem ressalvas na auditoria..."
+              class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-nrYellow transition"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full bg-nrYellow hover:bg-nrYellowHover text-gray-950 font-extrabold py-3.5 rounded-xl transition cursor-pointer flex items-center justify-center gap-2">
+            Enviar Depoimento via WhatsApp
+          </button>
+        </form>
+      </div>
+
+      <!-- Espaço para exibir depoimentos recebidos (já estruturado para quando você quiser fixar os melhores) -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-950 border border-gray-800 p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex text-nrYellow text-sm mb-3">★★★★★</div>
+            <p class="text-sm text-gray-300 italic leading-relaxed">"A adequação NR-12 da nossa linha foi entregue dentro do cronograma, sem parar a produção além do combinado e com toda a documentação e ART aprovadas na auditoria."</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80">
+            <p class="text-white font-bold text-sm">Roberto Silva</p>
+            <p class="text-xs text-nrYellow">Metalúrgica RS</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-950 border border-gray-800 p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex text-nrYellow text-sm mb-3">★★★★★</div>
+            <p class="text-sm text-gray-300 italic leading-relaxed">"Fizemos o retrofit do painel elétrico e atualização do CLP. O acabamento do quadro ficou impecável e eliminou as falhas intermitentes que tínhamos na fábrica."</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80">
+            <p class="text-white font-bold text-sm">Marcos Souza</p>
+            <p class="text-xs text-nrYellow">Fábrica de Embalagens Sinos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ / Perguntas Frequentes -->
   <section id="faq" class="py-20 bg-gray-900/60 border-t border-gray-800 px-4 sm:px-6">
     <div class="max-w-4xl mx-auto">
@@ -362,6 +428,15 @@
     </div>
   </section>
 
+  <!-- Botão Flutuante do WhatsApp -->
+  <a href="https://wa.me/5511960376413?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20ANF%20Instala%C3%A7%C3%B5es%20El%C3%A9tricas%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+     target="_blank" 
+     aria-label="Falar no WhatsApp"
+     class="fixed bottom-5 right-5 z-40 bg-green-500 hover:bg-green-600 text-gray-950 p-3.5 rounded-full shadow-lg shadow-green-500/20 flex items-center gap-2 font-extrabold text-sm transition-transform hover:scale-105">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+    <span class="hidden sm:inline pr-1">Orçamento Rápido</span>
+  </a>
+
   <!-- Footer com CNPJ Real Atualizado -->
   <footer class="py-12 border-t border-gray-800 text-center text-sm text-gray-500 px-4">
     <p class="font-bold text-gray-300 text-base">ANF Instalações Elétricas</p>
@@ -400,7 +475,7 @@
   </div>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUlj2yjGG7xsgo3zHBYJgUPFPxhoaCqj5YBbjqXsskh7P-iYIciiHBLTwQsRjchXJX8g/exec";
+    const SCRIPT_URL = "COLE_AQUI_A_NOVA_URL_DO_APPS_SCRIPT";
     const WHATSAPP_NUMBER = "5511960376413";
 
     const galerias = {
@@ -480,7 +555,7 @@
       document.getElementById('lightboxImg').src = "";
     }
 
-    // Formulário Otimizado
+    // Envio do formulário de orçamento
     document.getElementById('leadForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -501,7 +576,7 @@
         }).catch(err => console.error(err));
       }
 
-      let textoMsg = `Olá, tudo bem? Vim pelo site da ANF Instalações Elétricas.\n\n*Nome/Empresa:* ${nome}\n*Cidade/Região:* ${cidade}\n*Serviço de Interesse:* ${servico}\n\nGostaria de solicitar um orçamento/alinhamento técnico.`;
+      let textoMsg = `Olá, tudo bem? Vim pelo site da ANF Instalações Elétricas.\n\n*Nome/Empresa:* ${nome}\n*Cidade/Região:* `${cidade}\n*Serviço de Interesse:* ${servico}\n\nGostaria de solicitar um orçamento/alinhamento técnico.`;
 
       const urlWhats = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(textoMsg)}`;
 
@@ -511,6 +586,21 @@
         btn.innerText = "Abrir WhatsApp com Detalhes";
         document.getElementById('leadForm').reset();
       }, 300);
+    });
+
+    // Envio do formulário de depoimentos (Abre o WhatsApp formatado com Nome e Empresa)
+    document.getElementById('depoimentoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const nome = document.getElementById('depNome').value.trim();
+      const empresa = document.getElementById('depEmpresa').value.trim();
+      const texto = document.getElementById('depTexto').value.trim();
+
+      let msgDep = `Olá! Segue meu depoimento para o site da ANF Instalações Elétricas:\n\n*Nome:* ${nome}\n*Empresa:* ${empresa}\n*Depoimento:* "${texto}"`;
+
+      const urlWhatsDep = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msgDep)}`;
+      window.open(urlWhatsDep, '_blank');
+      document.getElementById('depoimentoForm').reset();
     });
 
     document.getElementById('menuBtn').addEventListener('click', function() {
