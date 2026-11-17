@@ -204,7 +204,7 @@
     </div>
   </section>
 
-  <!-- Obras & Projetos (Apenas 3 Cards Principais com Abertura de Galeria) -->
+  <!-- Obras & Projetos (3 Cards com Abertura Garantida ao Clique) -->
   <section id="obras" class="py-20 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -219,16 +219,15 @@
         </a>
       </div>
 
-      <!-- Apenas 3 Cards em Destaque -->
+      <!-- 3 Cards Principais -->
       <div class="grid md:grid-cols-3 gap-8">
         
         <!-- Card 1: Adequação NR-12 -->
         <div onclick="abrirGaleria('nr12')" class="bg-gray-900 border border-gray-800 hover:border-nrYellow/50 rounded-2xl overflow-hidden group cursor-pointer transition shadow-xl flex flex-col justify-between">
           <div>
-            <div class="h-64 bg-gray-800 relative overflow-hidden">
+            <div class="h-64 bg-gray-800 relative overflow-hidden pointer-events-none">
               <img src="foto-nr12-1.jpg" loading="lazy" alt="Adequação NR-12" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
               <span class="absolute top-3 left-3 bg-gray-950/80 backdrop-blur text-nrYellow text-xs font-bold px-3 py-1 rounded-full">Norma Regulamentadora</span>
-              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition"></div>
             </div>
             <div class="p-6">
               <span class="text-nrYellow font-semibold text-xs tracking-wider uppercase">Segurança de Máquinas</span>
@@ -245,10 +244,9 @@
         <!-- Card 2: Retrofit de Máquinas e Painéis -->
         <div onclick="abrirGaleria('retrofit')" class="bg-gray-900 border border-gray-800 hover:border-nrYellow/50 rounded-2xl overflow-hidden group cursor-pointer transition shadow-xl flex flex-col justify-between">
           <div>
-            <div class="h-64 bg-gray-800 relative overflow-hidden">
+            <div class="h-64 bg-gray-800 relative overflow-hidden pointer-events-none">
               <img src="foto-painel.jpg" loading="lazy" alt="Retrofit e Painéis" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
               <span class="absolute top-3 left-3 bg-gray-950/80 backdrop-blur text-nrYellow text-xs font-bold px-3 py-1 rounded-full">Modernização</span>
-              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition"></div>
             </div>
             <div class="p-6">
               <span class="text-nrYellow font-semibold text-xs tracking-wider uppercase">Comandos e Inversores</span>
@@ -265,10 +263,9 @@
         <!-- Card 3: Instalações e Manutenção Industrial -->
         <div onclick="abrirGaleria('industrial')" class="bg-gray-900 border border-gray-800 hover:border-nrYellow/50 rounded-2xl overflow-hidden group cursor-pointer transition shadow-xl flex flex-col justify-between">
           <div>
-            <div class="h-64 bg-gray-800 relative overflow-hidden">
+            <div class="h-64 bg-gray-800 relative overflow-hidden pointer-events-none">
               <img src="foto-linha.jpg" loading="lazy" alt="Manutenção Industrial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
               <span class="absolute top-3 left-3 bg-gray-950/80 backdrop-blur text-nrYellow text-xs font-bold px-3 py-1 rounded-full">Infraestrutura</span>
-              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition"></div>
             </div>
             <div class="p-6">
               <span class="text-nrYellow font-semibold text-xs tracking-wider uppercase">Fábricas e Linhas</span>
@@ -354,7 +351,7 @@
           <span class="text-nrYellow text-xs font-bold uppercase tracking-wider">Galeria de Obras</span>
           <h3 id="modalTitulo" class="text-2xl sm:text-3xl font-black text-white mt-1">Nome da Categoria</h3>
         </div>
-        <button onclick="fecharGaleria()" aria-label="Fechar galeria" class="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-xl transition flex items-center gap-2 text-sm font-bold">
+        <button onclick="fecharGaleria()" aria-label="Fechar galeria" class="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-xl transition flex items-center gap-2 text-sm font-bold cursor-pointer">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
           Fechar
         </button>
@@ -369,7 +366,7 @@
 
   <!-- Modal Lightbox (Zoom na Foto Individual) -->
   <div id="lightboxModal" onclick="fecharZoom()" class="fixed inset-0 z-60 hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
-    <button onclick="fecharZoom()" aria-label="Fechar zoom" class="absolute top-5 right-5 bg-gray-800 hover:bg-gray-700 text-white rounded-full p-3 transition z-50">
+    <button onclick="fecharZoom()" aria-label="Fechar zoom" class="absolute top-5 right-5 bg-gray-800 hover:bg-gray-700 text-white rounded-full p-3 transition z-50 cursor-pointer">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
     <img id="lightboxImg" src="" alt="Zoom da obra" onclick="event.stopPropagation()" class="max-h-[90vh] max-w-full rounded-xl shadow-2xl border border-gray-700 object-contain">
@@ -379,7 +376,7 @@
     const SCRIPT_URL = "COLE_AQUI_A_NOVA_URL_DO_APPS_SCRIPT";
     const WHATSAPP_NUMBER = "5511960376413";
 
-    // Organização de todas as 42 fotos em suas respectivas categorias
+    // Organização de todas as fotos em suas respectivas categorias
     const galerias = {
       nr12: {
         titulo: "Adequação NR-12 e Segurança de Máquinas",
@@ -417,11 +414,12 @@
 
     function abrirGaleria(categoria) {
       const dados = galerias[categoria];
+      if (!dados) return;
       document.getElementById('modalTitulo').innerText = dados.titulo;
       const grid = document.getElementById('modalGrid');
       grid.innerHTML = "";
 
-      dados.fotosforEach(foto => {
+      dados.fotos.forEach(foto => {
         const item = document.createElement('div');
         item.className = "aspect-square bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group cursor-pointer relative";
         item.onclick = () => abrirZoom(foto);
